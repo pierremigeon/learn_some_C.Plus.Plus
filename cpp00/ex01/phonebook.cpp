@@ -1,8 +1,10 @@
 #include <iostream>
+#include "phonebook.h"
 using namespace std;
 
 int	main() {
 	string input ("Start");
+	
 
 	while (input.compare("EXIT") != 0) {
 		cout << "Please enter command: ADD/SEARCH/EXIT\n";
