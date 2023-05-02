@@ -1,10 +1,7 @@
 #include <iostream>
 
 int	main(int ac, char **argv) {
-		
-	*argv[0] = 'a';
-	if (ac == 1)
-	{
+	if (ac == 1) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
 		return (0);
 	}
