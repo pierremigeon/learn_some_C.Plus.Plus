@@ -1,11 +1,13 @@
-
-#include <iomanip> 
+#include <iomanip>
+#include <sstream>
+#include <stdlib.h>
 using namespace std;
 
 namespace phonebook {
 
 class Contact {
 	public:
+	
 	string first_name;
 	string last_name;
 	string nickname;
@@ -13,22 +15,27 @@ class Contact {
 	string darkest_secret;
 
 	string  trunc(string s) {
-		unsigned size = s.size();
+		unsigned size = s.length();
 
-		s.resize(10);
-		if (size > 10) {
-			s.back() = '.';
+		if (size >= 10) {
+			s.resize(10);
+			if (size > 10)
+				s.back() = '.';
 		}
 		return s;
 	}
 
 	void display_entry(int x) {
-		cout << "|     index|first name|last name| nick name|\n";
-		cout << string(45, '_');
-		cout << setw(10);
-		cout << "|" << x << "|" << trunc(first_name) << "|" \
-			<< trunc(last_name) << "|" << trunc(nickname) << "|";
-		cout << string(45, '_');
+
+		cout << string(4*11 + 1, '#') << '\n';
+		cout << "|     index|first name| last name| nick name|\n";
+		cout << string(4*11 + 1, '#') << '\n';
+		cout << "|" << setw(10) << x << "|" 
+			<< setw(10) << trunc(first_name) << "|" 
+			<< setw(10) << trunc(last_name) << "|" 
+			<< setw(10) << trunc(nickname) << "|" << '\n';
+		cout << string(4*11 + 1, '#') << '\n';
+		cout << string(4*11 + 1, '#') << '\n';
 	};
 
 	//void update_create_entry() {
@@ -37,15 +44,12 @@ class Contact {
 };
 
 class PhoneBook {
-private:
+	public:
 	Contact list[8];
-	int 	current_index;
+	//int 	current_index;
 
-	list[0]->first_name = "Pierre";
-
-public:
 	void show_entry(int x) {
-		if (x > 8 || x < 0) {
+		if (x >= 8 || x < 0) {
 			cout << "Index out of range\n";
 			return;
 		}
