@@ -53,13 +53,17 @@ class PhoneBook {
 			cout << "Index out of range\n";
 			return;
 		}
-		Contact entry = list[x];
+		Contact entry = list[0];
 		entry.display_entry(x);
 	};
 
-	//void new_entry() {
-			
-	//};
+	void new_entry(int index) {
+		list[index].first_name = "Pierre";
+		list[index].last_name = "Migeon";
+		list[index].nickname = "PierreMonetchiemonger";
+		list[index].phone_number = "123456789101112";
+		list[index].darkest_secret = "Is the secret pope";
+	};
 };
 
 }
