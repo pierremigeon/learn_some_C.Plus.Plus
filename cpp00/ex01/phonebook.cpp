@@ -4,6 +4,11 @@
 using namespace std;
 using namespace phonebook;
 
+void	make_upper(string *s) {
+	for (unsigned long i = 0; i < s->size(); ++i)
+		s[0][i] = s[0][i] & ~' ';
+}
+
 int	main() {
 	string input ("Start");
 	string to_int;
@@ -13,6 +18,7 @@ int	main() {
 		to_int.clear();
 		cout << "Please enter command: ADD/SEARCH/EXIT\n";
 		cin >> input;
+		make_upper(&input);
 		if (!input.compare("ADD")) {
 			book.new_entry(0);
 			cout << "you're adding\n";
