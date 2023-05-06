@@ -20,8 +20,8 @@ int	main() {
 		cin >> input;
 		make_upper(&input);
 		if (!input.compare("ADD")) {
-			book.new_entry(0);
-			cout << "you're adding\n";
+			book.new_entry();
+			input.clear();
 		}
 		while (!input.compare("SEARCH") && to_int[0] != 'q') {
 			cout << "Please enter the desired index to view or q to exit search mode:\n";

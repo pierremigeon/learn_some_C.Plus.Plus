@@ -37,32 +37,37 @@ class Contact {
 		cout << string(4*11 + 1, '#') << '\n';
 		cout << string(4*11 + 1, '#') << '\n';
 	};
-
-	//void update_create_entry() {
-	//	
-	//}
 };
 
 class PhoneBook {
-	public:
 	Contact list[8];
-	//int 	current_index;
+	int 	current_index;
+
+	public:
+	PhoneBook() {current_index = -1;}
 
 	void show_entry(int x) {
 		if (x >= 8 || x < 0) {
 			cout << "Index out of range\n";
 			return;
 		}
-		Contact entry = list[0];
+		Contact entry = list[x];
 		entry.display_entry(x);
 	};
 
-	void new_entry(int index) {
-		list[index].first_name = "Pierre";
-		list[index].last_name = "Migeon";
-		list[index].nickname = "PierreMonetchiemonger";
-		list[index].phone_number = "123456789101112";
-		list[index].darkest_secret = "Is the secret pope";
+	void new_entry() {
+		if (current_index < 7) {++current_index;}
+		cin.ignore();
+		cout << "Please enter first name:\n";
+		getline(cin, list[current_index].first_name);
+		cout << "Please enter last name:\n";
+		getline(cin, list[current_index].last_name);
+		cout << "Please enter nick name:\n";
+		getline(cin, list[current_index].nickname);
+		cout << "Please enter phone number:\n";
+		getline(cin, list[current_index].phone_number);
+		cout << "Please enter darkest secret:\n";
+		getline(cin, list[current_index].darkest_secret);
 	};
 };
 
