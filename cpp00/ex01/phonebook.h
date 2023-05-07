@@ -6,13 +6,27 @@ using namespace std;
 namespace phonebook {
 
 class Contact {
-	public:
-	
+	private:
 	string first_name;
 	string last_name;
 	string nickname;
 	string phone_number;
 	string darkest_secret;
+
+	public:
+	void new_entry() {
+		cin.ignore();
+		cout << "Please enter first name:\n";
+		getline(cin, first_name);
+		cout << "Please enter last name:\n";
+		getline(cin, last_name);
+		cout << "Please enter nick name:\n";
+		getline(cin, nickname);
+		cout << "Please enter phone number:\n";
+		getline(cin, phone_number);
+		cout << "Please enter darkest secret:\n";
+		getline(cin, darkest_secret);
+	}
 
 	string  trunc(string s) {
 		unsigned size = s.length();
@@ -40,6 +54,7 @@ class Contact {
 };
 
 class PhoneBook {
+	private:
 	Contact list[8];
 	int 	current_index;
 
@@ -57,17 +72,7 @@ class PhoneBook {
 
 	void new_entry() {
 		if (current_index < 7) {++current_index;}
-		cin.ignore();
-		cout << "Please enter first name:\n";
-		getline(cin, list[current_index].first_name);
-		cout << "Please enter last name:\n";
-		getline(cin, list[current_index].last_name);
-		cout << "Please enter nick name:\n";
-		getline(cin, list[current_index].nickname);
-		cout << "Please enter phone number:\n";
-		getline(cin, list[current_index].phone_number);
-		cout << "Please enter darkest secret:\n";
-		getline(cin, list[current_index].darkest_secret);
+		list[current_index].new_entry();
 	};
 };
 
