@@ -1,7 +1,7 @@
 
 all:
 	clear;
-	c++ -Wall -Wextra -Werror phonebook.cpp -o phonebook 
+	c++ -Wall -Wextra -Werror -std=c++98 phonebook.cpp -o phonebook 
 
 m:
 	vi phonebook.cpp
