@@ -1,6 +1,8 @@
-#include <stdlib.h>
-#include <string>
-#include <iostream>
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
+# include <stdlib.h>
+# include <string>
+# include <iostream>
 
 class Zombie {
 	std::string name;
@@ -21,3 +23,5 @@ class Zombie {
 Zombie* newZombie( std::string name );
 void randomChump( std::string name );
 Zombie*    zombieHorde( int N, std::string name );
+
+#endif

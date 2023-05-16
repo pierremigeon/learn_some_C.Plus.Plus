@@ -1,6 +1,8 @@
-#include <iomanip>
-#include <sstream>
-#include <stdlib.h>
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
+# include <iomanip>
+# include <sstream>
+# include <stdlib.h>
 using namespace std;
 
 namespace phonebook {
@@ -77,3 +79,5 @@ class PhoneBook {
 };
 
 }
+
+#endif
