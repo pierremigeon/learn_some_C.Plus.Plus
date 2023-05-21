@@ -5,10 +5,10 @@
 # include <iostream>
 
 class Weapon {
-	std::string *type;
+	std::string const *type;
 
 	public:
-	Weapon(std::string type);
+	Weapon(const std::string type);
 	const std::string &getType();
 	void setType (std::string w_type);
 };
