@@ -2,15 +2,15 @@
 #include "HumanB.hpp"
 
 HumanB::HumanB (const std::string name) {
-	HumanB::name = &name;
+	this->name = &name;
 }
 
 void	HumanB::attack() {
-	if (!HumanB::w_type)
+	if (!this->w_type)
 		return;
-	std::cout << *HumanB::name << " attacks with their " << HumanB::w_type->getType() << std::endl;
+	std::cout << *this->name << " attacks with their " << this->w_type->getType() << std::endl;
 }
 
 void	HumanB::setWeapon(Weapon &w_type) {
-	HumanB::w_type = &w_type;
+	this->w_type = &w_type;
 }

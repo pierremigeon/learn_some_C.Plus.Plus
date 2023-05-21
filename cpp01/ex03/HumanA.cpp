@@ -2,14 +2,14 @@
 #include "HumanA.hpp"
 
 HumanA::HumanA (const std::string name, Weapon &w_type) {
-	HumanA::name = &name;
-	HumanA::w_type = &w_type;
+	this->name = &name;
+	this->w_type = &w_type;
 }
 
 void	HumanA::attack() {
-	std::cout << *HumanA::name << " attacks with their " << HumanA::w_type->getType() << std::endl;
+	std::cout << *this->name << " attacks with their " << this->w_type->getType() << std::endl;
 }
 
 void	HumanA::setWeapon(Weapon &w_type) {
-	HumanA::w_type = &w_type;
+	this->w_type = &w_type;
 }
