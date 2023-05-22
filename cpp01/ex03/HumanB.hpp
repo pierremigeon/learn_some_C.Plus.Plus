@@ -1,13 +1,15 @@
-#include <stdlib.h>
-#include <string>
-#include <iostream>
+#ifndef HUMANB_H
+# define HUMANB_H
+# include "Weapon.hpp"
 
 class HumanB {
-	const std::string 	*name;
-	Weapon 			*w_type;
+	std::string 	name;
+	Weapon 		*weapon;
 
 	public:
-	HumanB (const std::string name);
+	HumanB (std::string name);
 	void 	attack();
 	void	setWeapon(Weapon &w_type);
 };
+
+#endif

@@ -1,13 +1,14 @@
-#include <stdlib.h>
-#include <string>
-#include <iostream>
+#ifndef HUMANA_H
+# define HUMANA_H
+# include "Weapon.hpp"
 
 class HumanA {
-	const std::string 	*name;
-	Weapon 			*w_type;
+	std::string 	name;
+	Weapon 		&weapon;
 
 	public:
-	HumanA (const std::string name, Weapon &w_type);
+	HumanA (std::string name, Weapon &weapon);
 	void 		attack();
-	void		setWeapon(Weapon &w_type);
 };
+
+#endif

@@ -17,5 +17,15 @@ int main() {
 		club.setType("some other type of club");
 		jim.attack();
 	}
+	
+	{
+		Weapon  club = Weapon("Tunafish sandwhich");
+		HumanA lucy("Lucy", club);
+		lucy.attack();
+		club.setType("sling-shot");
+		lucy.attack();
+	} 
+
+
 	return 0; 
 }
