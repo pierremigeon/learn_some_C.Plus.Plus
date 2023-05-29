@@ -10,6 +10,10 @@ int	main()
 	test.complain("error");
 	test.complain("nonsense");
 	test.complain("");
+	test.complain("DEBUG");
+	test.complain("INFO");
+	test.complain("WARNING");
+	test.complain("ERROR");
 
 
 

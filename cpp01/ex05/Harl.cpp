@@ -16,21 +16,33 @@ void	Harl::error( void ) {
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
+Harl::Harl () {
+	this->function[0] = &Harl::debug; 
+	this->function[1] = &Harl::info;
+	this->function[2] = &Harl::warning; 
+	this->function[3] = &Harl::error;
+}
+
+std::string	make_upper(std::string str) {
+	for (int i = 0; i < (int)str.length(); i++) {
+		str[i] = toupper(str[i]); 
+	}
+	return str;
+}
+
 void    Harl::complain( std::string level ) {
-	typedef void (Harl::*function_pointer)();
+	std::string names[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-	function_pointer function[4] = { 
-		&Harl::debug, &Harl::info, &Harl::warning, &Harl::error
-	};
-	std::string names[4] = {"debug", "info", "warning", "error"};
-
+	level = make_upper(level);
 	for (int i = 0; i <= 4; i++) {
 		if (i == 4) {
-			std::cout << "incorrect level reference" << std::endl;
+			std::cout << "incorrect level reference\n" << std::endl;
 			break;
 		}
 		if (level == names[i]) {
+			std::cout << "[" << level << "]" << std::endl;
 			(this->*function[i])();	
+			std::cout << "\n";
 			break;
 		}
 	}
