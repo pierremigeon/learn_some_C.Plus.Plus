@@ -9,10 +9,8 @@ class FixPoint {
 
 	public:
 	FixPoint( void );	
-	//copy constructor
 	FixPoint( const FixPoint &FP);
-	//Assignment overload constructor 
-	FixPoint	operator=( const FixPoint &FP);
+	void	operator=( const FixPoint &FP);
 	~FixPoint( void );
 	int	getRawBits( void ) const;
 	void	setRawBits( int const raw );

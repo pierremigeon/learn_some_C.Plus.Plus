@@ -6,7 +6,6 @@ int	main() {
 	FixPoint a;
 	FixPoint b(a);
 	FixPoint c;
-
 	c = b;
 
 	std::cout << a.getRawBits() << std::endl;
