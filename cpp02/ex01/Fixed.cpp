@@ -18,6 +18,12 @@ void	FixPoint::operator=( const FixPoint &FP ) {
 	this->value = FP.getRawBits();
 }
 
+//<< operator overload 
+std::ostream 	&operator<<( std::ostream &out, const FixPoint &FP) {
+	out << FP.toFloat();
+	return out;
+}
+
 //Default destructor
 FixPoint::~FixPoint( void ) {
 	std::cout << "Destructor called" << std::endl;

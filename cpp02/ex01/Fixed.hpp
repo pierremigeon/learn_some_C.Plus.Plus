@@ -13,12 +13,13 @@ class FixPoint {
 		FixPoint( const float f);
 	FixPoint( const FixPoint &FP);
 	void	operator=( const FixPoint &FP);
-		void	operator<<( const FixPoint &FP);
 	~FixPoint( void );
 	int	getRawBits( void ) const;
 	void	setRawBits( int const raw );
 		float	toFloat( void ) const;
 		int	toInt( void ) const;
 };
+
+		std::ostream	&operator<<( std::ostream &out, const FixPoint &FP);
 
 #endif
