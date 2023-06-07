@@ -20,6 +20,6 @@ class FixPoint {
 		int	toInt( void ) const;
 };
 
-		std::ostream	&operator<<( std::ostream &out, const FixPoint &FP);
+	std::ostream	&operator<<( std::ostream &out, const FixPoint &FP );
 
 #endif
