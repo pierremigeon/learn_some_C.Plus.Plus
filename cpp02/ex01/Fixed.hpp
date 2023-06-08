@@ -2,6 +2,8 @@
 # define FIX_POINT_H
 # include <stdlib.h>
 # include <iostream>
+# include <math.h>
+
 
 class FixPoint {
 	int			value;

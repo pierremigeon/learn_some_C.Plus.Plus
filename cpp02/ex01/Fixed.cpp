@@ -13,9 +13,10 @@ FixPoint::FixPoint( const int i ) {
 }
 
 //constructor taking a float
-//FixPoint::FixPoint( const int f ) {
-//
-//}
+FixPoint::FixPoint( const float f ) {
+	int value = f * pow(2, this->fraction);
+	this->value = value;
+}
 
 //copy constructor
 FixPoint::FixPoint( const FixPoint &FP ) {
@@ -31,7 +32,8 @@ void	FixPoint::operator=( const FixPoint &FP ) {
 
 //<< operator overload 
 std::ostream 	&operator<<( std::ostream &out, const FixPoint &FP) {
-	out << FP.toInt();
+	//out << FP.toInt();
+	out << FP.toFloat();
 	return out;
 }
 
@@ -59,7 +61,8 @@ int 	FixPoint::toInt( void ) const {
 }
 
 float	FixPoint::toFloat( void ) const {
-	return 1;
+	float 	out;
+
+	out = this->value * 1.0 / pow(2, this->fraction);
+	return out;
 }
-
-
