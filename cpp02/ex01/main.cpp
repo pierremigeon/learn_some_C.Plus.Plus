@@ -2,18 +2,18 @@
 #include <iostream>
 
 int	main( void ) {
-	//FixPoint a;
+	FixPoint a;
 	FixPoint const b( 10 ); 
 	FixPoint const c( 42.42f ); 
 	FixPoint const d( b );
-	//a = FixPoint( 1234.4321f );
+	a = FixPoint( 1234.4321f );
 
-	//std::cout << "a is " << a << std::endl;
+	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
 
-	//std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;

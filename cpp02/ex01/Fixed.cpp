@@ -14,7 +14,8 @@ FixPoint::FixPoint( const int i ) {
 
 //constructor taking a float
 FixPoint::FixPoint( const float f ) {
-	int value = f * pow(2, this->fraction);
+	std::cout << "Float constructor called" << std::endl;
+	int value = round(f * pow(2, this->fraction));
 	this->value = value;
 }
 
@@ -56,7 +57,7 @@ void	FixPoint::setRawBits( int const raw ) {
 int 	FixPoint::toInt( void ) const {
 	int out;
 
-	out = this->value >> this->fraction;
+	out = this->value * 1.0 / pow(2, this->fraction);
 	return out;
 }
 
