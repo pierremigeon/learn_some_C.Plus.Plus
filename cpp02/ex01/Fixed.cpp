@@ -15,8 +15,13 @@ FixPoint::FixPoint( const int i ) {
 //constructor taking a float
 FixPoint::FixPoint( const float f ) {
 	std::cout << "Float constructor called" << std::endl;
-	int value = round(f * pow(2, this->fraction));
-	this->value = value;
+	int 	value;
+	float 	temp;
+
+	temp = f;
+	temp *= pow(2, this->fraction);
+	value = round(temp);
+	this->value = value; 
 }
 
 //copy constructor
@@ -32,8 +37,7 @@ void	FixPoint::operator=( const FixPoint &FP ) {
 }
 
 //<< operator overload 
-std::ostream 	&operator<<( std::ostream &out, const FixPoint &FP) {
-	//out << FP.toInt();
+std::ostream 	&operator<<( std::ostream &out, const FixPoint &FP ) {
 	out << FP.toFloat();
 	return out;
 }
@@ -54,16 +58,18 @@ void	FixPoint::setRawBits( int const raw ) {
 	this->value = raw;
 }
 
-int 	FixPoint::toInt( void ) const {
+//toInt
+int	FixPoint::toInt( void ) const {
 	int out;
 
-	out = this->value * 1.0 / pow(2, this->fraction);
-	return out;
+	out = this->value / pow(2, this->fraction);
+	return( out );
 }
 
+//toFloat
 float	FixPoint::toFloat( void ) const {
 	float 	out;
 
-	out = this->value * 1.0 / pow(2, this->fraction);
-	return out;
+	out = 1.0f *  this->value / pow(2, this->fraction);
+	return( out );
 }

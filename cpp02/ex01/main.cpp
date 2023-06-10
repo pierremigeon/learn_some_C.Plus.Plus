@@ -2,6 +2,7 @@
 #include <iostream>
 
 int	main( void ) {
+
 	FixPoint a;
 	FixPoint const b( 10 ); 
 	FixPoint const c( 42.42f ); 
