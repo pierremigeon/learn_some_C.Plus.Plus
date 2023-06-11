@@ -11,16 +11,10 @@ class FixPoint {
 	public:
 	FixPoint( void );	
 	FixPoint( const int i);
-	FixPoint( const float f);
+	FixPoint( const double f);
 	FixPoint( const FixPoint &FP);
 	void	operator=( const FixPoint &FP);
-		void	operator>( const FixPoint &FP);
 /*
-		void	operator<( const FixPoint &FP);
-		void	operator>=( const FixPoint &FP);
-		void	operator<=( const FixPoint &FP);
-		void	operator==( const FixPoint &FP);
-		void	operator!=( const FixPoint &FP);
 		void	operator+( const FixPoint &FP);
 		void	operator-( const FixPoint &FP);
 		void	operator*( const FixPoint &FP);
@@ -34,7 +28,7 @@ class FixPoint {
 	~FixPoint( void );
 	int	getRawBits( void ) const;
 	void	setRawBits( int const raw );
-	float	toFloat( void ) const;
+	double	toFloat( void ) const;
 	int	toInt( void ) const;
 };
 
@@ -43,13 +37,41 @@ std::ostream    &operator<<( std::ostream &out, const FixPoint &FP );
 bool		operator==( const FixPoint &FP1, const FixPoint &FP2 );
 bool		operator==( const FixPoint &FP, const int i );
 bool		operator==( const int i, const FixPoint &FP );
-bool		operator==( const FixPoint &FP, const float f );
-bool		operator==( const float f, const FixPoint &FP );
+bool		operator==( const FixPoint &FP, const double f );
+bool		operator==( const double f, const FixPoint &FP );
 
 bool		operator!=( const FixPoint &FP1, const FixPoint &FP2 );
 bool		operator!=( const FixPoint &FP, const int i );
 bool		operator!=( const int i, const FixPoint &FP );
-bool		operator!=( const FixPoint &FP, const float f );
-bool		operator!=( const float f, const FixPoint &FP );
+bool		operator!=( const FixPoint &FP, const double f );
+bool		operator!=( const double f, const FixPoint &FP );
+
+bool		operator<=( const FixPoint &FP1, const FixPoint &FP2 );
+bool		operator<=( const FixPoint &FP, const int i );
+bool		operator<=( const int i, const FixPoint &FP );
+bool		operator<=( const FixPoint &FP, const double f );
+bool		operator<=( const double f, const FixPoint &FP );
+
+bool		operator>=( const FixPoint &FP1, const FixPoint &FP2 );
+bool		operator>=( const FixPoint &FP, const int i );
+bool		operator>=( const int i, const FixPoint &FP );
+bool		operator>=( const FixPoint &FP, const double f );
+bool		operator>=( const double f, const FixPoint &FP );
+
+bool		operator>( const FixPoint &FP1, const FixPoint &FP2 );
+bool		operator>( const FixPoint &FP, const int i );
+bool		operator>( const int i, const FixPoint &FP );
+bool		operator>( const FixPoint &FP, const double f );
+bool		operator>( const double f, const FixPoint &FP );
+
+bool		operator<( const FixPoint &FP1, const FixPoint &FP2 );
+bool		operator<( const FixPoint &FP, const int i );
+bool		operator<( const int i, const FixPoint &FP );
+bool		operator<( const FixPoint &FP, const double f );
+bool		operator<( const double f, const FixPoint &FP );
+
+
+
+
 
 #endif

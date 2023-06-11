@@ -12,11 +12,11 @@ FixPoint::FixPoint( const int i ) {
 	this->value = i << this->fraction;
 }
 
-//constructor taking a float
-FixPoint::FixPoint( const float f ) {
+//constructor taking a double
+FixPoint::FixPoint( const double f ) {
 	std::cout << "Float constructor called" << std::endl;
 	int 	value;
-	float 	temp;
+	double 	temp;
 
 	temp = f;
 	temp *= pow(2, this->fraction);
@@ -45,14 +45,10 @@ std::ostream 	&operator<<( std::ostream &out, const FixPoint &FP ) {
 	return out;
 }
 
-//> operator overload function
-int	operator>( const FixPoint &FP1, const FixPoint &FP2 ) {
-	return (FP1.toInt() > FP2.toInt());
-}
+
 
 
 //== OVERLOADS
-
 //== operator overload function: FP TO FP
 bool	operator==( const FixPoint &FP1, const FixPoint &FP2 ) {
 	return (FP1.getRawBits() == FP2.getRawBits());
@@ -69,17 +65,16 @@ bool	operator==( const int i, const FixPoint &FP ) {
 }
 
 //== operator overload function: FP TO FLOAT
-bool	operator==( const FixPoint &FP, const float f ) {
+bool	operator==( const FixPoint &FP, const double f ) {
 	return (FP.toFloat() == f);
 }
 
 //== operator overload function FLOAT TO FP
-bool	operator==( const float f, const FixPoint &FP ) {
+bool	operator==( const double f, const FixPoint &FP ) {
 	return (f == FP.toFloat());
 }
 
 //!= OVERLOADS
-
 //!= operator overload function: FP TO FP
 bool	operator!=( const FixPoint &FP1, const FixPoint &FP2 ) {
 	return (FP1.getRawBits() != FP2.getRawBits());
@@ -96,14 +91,120 @@ bool	operator!=( const int i, const FixPoint &FP ) {
 }
 
 //!= operator overload function: FP TO FLOAT
-bool	operator!=( const FixPoint &FP, const float f ) {
+bool	operator!=( const FixPoint &FP, const double f ) {
 	return (FP.toFloat() != f);
 }
 
 //!= operator overload function FLOAT TO FP
-bool	operator!=( const float f, const FixPoint &FP ) {
+bool	operator!=( const double f, const FixPoint &FP ) {
 	return (f != FP.toFloat());
 }
+
+//> OVERLOADS
+//> operator overload function: FP TO FP
+bool	operator>( const FixPoint &FP1, const FixPoint &FP2 ) {
+	return (FP1.getRawBits() > FP2.getRawBits());
+}
+
+//> operator overload function: FP TO INT
+bool	operator>( const FixPoint &FP, const int i ) {
+	return (FP.toInt() > i);
+}
+
+//> operator overload function INT TO FP
+bool	operator>( const int i, const FixPoint &FP ) {
+	return (i > FP.toInt());
+}
+
+//> operator overload function: FP TO FLOAT
+bool	operator>( const FixPoint &FP, const double f ) {
+	return (FP.toFloat() > f);
+}
+
+//> operator overload function FLOAT TO FP
+bool	operator>( const double f, const FixPoint &FP ) {
+	return (f > FP.toFloat());
+}
+
+//< OVERLOADS
+//< operator overload function: FP TO FP
+bool	operator<( const FixPoint &FP1, const FixPoint &FP2 ) {
+	return (FP1.getRawBits() < FP2.getRawBits());
+}
+
+//< operator overload function: FP TO INT
+bool	operator<( const FixPoint &FP, const int i ) {
+	return (FP.toInt() < i);
+}
+
+//< operator overload function INT TO FP
+bool	operator<( const int i, const FixPoint &FP ) {
+	return (i < FP.toInt());
+}
+
+//< operator overload function: FP TO FLOAT
+bool	operator<( const FixPoint &FP, const double f ) {
+	return (FP.toFloat() < f);
+}
+
+//< operator overload function FLOAT TO FP
+bool	operator<( const double f, const FixPoint &FP ) {
+	return (f < FP.toFloat());
+}
+
+//<= OVERLOADS
+//<= operator overload function: FP TO FP
+bool	operator<=( const FixPoint &FP1, const FixPoint &FP2 ) {
+	return (FP1.getRawBits() <= FP2.getRawBits());
+}
+
+//<= operator overload function: FP TO INT
+bool	operator<=( const FixPoint &FP, const int i ) {
+	return (FP.toInt() <= i);
+}
+
+//<= operator overload function INT TO FP
+bool	operator<=( const int i, const FixPoint &FP ) {
+	return (i <= FP.toInt());
+}
+
+//<= operator overload function: FP TO FLOAT
+bool	operator<=( const FixPoint &FP, const double f ) {
+	return (FP.toFloat() <= f);
+}
+
+//<= operator overload function FLOAT TO FP
+bool	operator<=( const double f, const FixPoint &FP ) {
+	return (f <= FP.toFloat());
+}
+
+//>= OVERLOADS
+//>= operator overload function: FP TO FP
+bool	operator>=( const FixPoint &FP1, const FixPoint &FP2 ) {
+	return (FP1.getRawBits() >= FP2.getRawBits());
+}
+
+//>= operator overload function: FP TO INT
+bool	operator>=( const FixPoint &FP, const int i ) {
+	return (FP.toInt() >= i);
+}
+
+//>= operator overload function INT TO FP
+bool	operator>=( const int i, const FixPoint &FP ) {
+	return (i >= FP.toInt());
+}
+
+//>= operator overload function: FP TO FLOAT
+bool	operator>=( const FixPoint &FP, const double f ) {
+	return (FP.toFloat() >= f);
+}
+
+//>= operator overload function FLOAT TO FP
+bool	operator>=( const double f, const FixPoint &FP ) {
+	return (f >= FP.toFloat());
+}
+
+
 
 
 //Default destructor
@@ -131,8 +232,8 @@ int	FixPoint::toInt( void ) const {
 }
 
 //toFloat
-float	FixPoint::toFloat( void ) const {
-	float 	out;
+double	FixPoint::toFloat( void ) const {
+	double 	out;
 
 	out = 1.0f *  this->value / pow(2, this->fraction);
 	return( out );
