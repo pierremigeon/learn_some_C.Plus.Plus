@@ -19,11 +19,13 @@ class FixPoint {
 		void	operator-( const FixPoint &FP);
 		void	operator*( const FixPoint &FP);
 		void	operator/( const FixPoint &FP);
-		FixPoint	min( FixPoint &FP1, FixPoint &FP2);
-		FixPoint	min( const FixPoint &FP1, const FixPoint &FP2);
-		FixPoint	max( FixPoint &FP1, FixPoint &FP2);
-		FixPoint	max( const FixPoint &FP1, const FixPoint &FP2);
 */
+
+static	FixPoint	&min( FixPoint &FP1, FixPoint &FP2);
+static	FixPoint	&min( const FixPoint &FP1, const FixPoint &FP2);
+static	FixPoint	&max( FixPoint &FP1, FixPoint &FP2);
+static	FixPoint	&max( const FixPoint &FP1, const FixPoint &FP2);
+
 
 	~FixPoint( void );
 	int	getRawBits( void ) const;

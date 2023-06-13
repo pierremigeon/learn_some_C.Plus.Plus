@@ -205,8 +205,6 @@ bool	operator>=( const double f, const FixPoint &FP ) {
 }
 
 
-
-
 //Default destructor
 FixPoint::~FixPoint( void ) {
 	std::cout << "Destructor called" << std::endl;
@@ -237,4 +235,22 @@ double	FixPoint::toFloat( void ) const {
 
 	out = 1.0f *  this->value / pow(2, this->fraction);
 	return( out );
+}
+
+
+static	FixPoint	&min( FixPoint &FP1, FixPoint &FP2) {
+	return (( FP1 < FP2 ) ? FP1 : FP2 );
+}
+
+static	FixPoint	&min( const FixPoint &FP1, const FixPoint &FP2) {
+	return (( FP1 < FP2 ) ? FP1 : FP2 );
+}
+
+static	FixPoint	&max( FixPoint &FP1, FixPoint &FP2) {
+	return (( FP1 > FP2 ) ? FP1 : FP2 );
+
+}
+
+static	FixPoint	&max( const FixPoint &FP1, const FixPoint &FP2) {
+	return (( FP1 > FP2 ) ? FP1 : FP2 );
 }
