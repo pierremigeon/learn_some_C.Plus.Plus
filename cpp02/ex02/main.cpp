@@ -234,5 +234,34 @@ int	main( void ) {
 	std::cout << ( e < z_0 ) << std::endl; 
 
 
+	
+	const FixPoint A(5);
+        const FixPoint B(6);
+	const FixPoint C(5.5);
+        const FixPoint D(6.5);
+	
+
+
+	FixPoint X = FixPoint::min(a, c);
+	if ( X.toFloat() == a.toFloat() )
+		std::cout << "first correct" << std::endl;
+	X =  FixPoint::min(A, B);
+	if ( X.toFloat() == A.toFloat() )
+		std::cout << "second correct" << std::endl;
+	X =  FixPoint::min(C, D);
+	if ( X.toFloat() == C.toFloat() )
+		std::cout << "third correct" << std::endl;
+	X = FixPoint::max(a, c);
+	if ( X.toFloat() == c.toFloat() )
+		std::cout << "fourth correct" << std::endl;
+	X =  FixPoint::max(A, B);
+	if ( X.toFloat() == B.toFloat() )
+		 std::cout << "fifth correct" << std::endl;
+	X =  FixPoint::max(C, D);
+	if ( X.toFloat() == D.toFloat() )
+		 std::cout << "sixth correct" << std::endl;
+	
+
+	
 	return 0; 
 }
