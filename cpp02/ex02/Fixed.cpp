@@ -333,3 +333,25 @@ double		operator/( const double a, const FixPoint &b ) {
 double		operator/( const FixPoint &a, const double b ) { 
 	return ( a.toFloat() / b );
 }
+
+FixPoint	&FixPoint::operator++() {
+	this->value++;
+	return *this;
+}
+
+int		FixPoint::operator++(int) {
+	int temp = this->value;
+	this->value++;
+	return temp;
+}
+
+FixPoint	&FixPoint::operator--() {
+	this->value--;
+	return *this;
+}
+
+int		FixPoint::operator--(int) {
+	int temp = this->value;
+	this->value--;
+	return temp;
+}

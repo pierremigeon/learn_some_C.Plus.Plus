@@ -20,10 +20,16 @@ class FixPoint {
 	void	setRawBits( int const raw );
 	double	toFloat( void ) const;
 	int	toInt( void ) const;
+
 	static	FixPoint	&min( FixPoint &FP1, FixPoint &FP2);
 	static	const	FixPoint	&min( const FixPoint &FP1, const FixPoint &FP2);
 	static	FixPoint	&max( FixPoint &FP1, FixPoint &FP2);
 	static	const	FixPoint	&max( const FixPoint &FP1, const FixPoint &FP2);
+
+	FixPoint	&operator++();
+	int		operator++(int);
+	FixPoint	&operator--();
+	int		operator--(int);
 };
 
 double		operator+( const int a, const FixPoint &b );

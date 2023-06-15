@@ -306,6 +306,8 @@ int	main( void ) {
 		std::cout << z_0 / f << std::endl;
 	
 
+
+
 	
 	return 0; 
 }
