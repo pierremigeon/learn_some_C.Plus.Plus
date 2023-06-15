@@ -27,9 +27,9 @@ class FixPoint {
 	static	const	FixPoint	&max( const FixPoint &FP1, const FixPoint &FP2);
 
 	FixPoint	&operator++();
-	int		operator++(int);
+	FixPoint	operator++(int);
 	FixPoint	&operator--();
-	int		operator--(int);
+	FixPoint	operator--(int);
 };
 
 double		operator+( const int a, const FixPoint &b );

@@ -3,6 +3,10 @@ all: main.cpp Fixed.cpp
 	@clear
 	c++ -Wall -Wextra -Werror -std=c++98 $^ -o FixPoint_2
 
+test:	main2.cpp Fixed.cpp
+	@clear
+	c++ -Wall -Wextra -Werror -std=c++98 $^ -o FixPoint_2
+
 run: FixPoint_2
 	./FixPoint_2
 

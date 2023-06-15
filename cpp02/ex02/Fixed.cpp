@@ -339,8 +339,8 @@ FixPoint	&FixPoint::operator++() {
 	return *this;
 }
 
-int		FixPoint::operator++(int) {
-	int temp = this->value;
+FixPoint	FixPoint::operator++(int) {
+	FixPoint temp = *this;
 	this->value++;
 	return temp;
 }
@@ -350,8 +350,8 @@ FixPoint	&FixPoint::operator--() {
 	return *this;
 }
 
-int		FixPoint::operator--(int) {
-	int temp = this->value;
+FixPoint	FixPoint::operator--(int) {
+	FixPoint temp = *this;
 	this->value--;
 	return temp;
 }
