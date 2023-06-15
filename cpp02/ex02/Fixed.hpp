@@ -14,13 +14,8 @@ class FixPoint {
 	FixPoint( const double f);
 	FixPoint( const FixPoint &FP);
 	void	operator=( const FixPoint &FP);
-/*
-		void	operator+( const FixPoint &FP);
-		void	operator-( const FixPoint &FP);
-		void	operator*( const FixPoint &FP);
-		void	operator/( const FixPoint &FP);
-*/
 	~FixPoint( void );
+
 	int	getRawBits( void ) const;
 	void	setRawBits( int const raw );
 	double	toFloat( void ) const;
@@ -31,29 +26,29 @@ class FixPoint {
 	static	const	FixPoint	&max( const FixPoint &FP1, const FixPoint &FP2);
 };
 
-double		operator+( const int a, const FixPoint b );
-double		operator+( const FixPoint a, const int b );
-double		operator+( const FixPoint a, const FixPoint b );
-double		operator+( const double a, const FixPoint b );
-double		operator+( const FixPoint a, const double b );
+double		operator+( const int a, const FixPoint &b );
+double		operator+( const FixPoint &a, const int b );
+double		operator+( const FixPoint &a, const FixPoint &b );
+double		operator+( const double a, const FixPoint &b );
+double		operator+( const FixPoint &a, const double b );
 
-double		operator-( const int a, const FixPoint b );
-double		operator-( const FixPoint a, const int b );
-double		operator-( const FixPoint a, const FixPoint b );
-double		operator-( const double a, const FixPoint b );
-double		operator-( const FixPoint a, const double b );
+double		operator-( const int a, const FixPoint &b );
+double		operator-( const FixPoint &a, const int b );
+double		operator-( const FixPoint &a, const FixPoint &b );
+double		operator-( const double a, const FixPoint &b );
+double		operator-( const FixPoint &a, const double b );
 
-double		operator*( const int a, const FixPoint b );
-double		operator*( const FixPoint a, const int b );
-double		operator*( const FixPoint a, const FixPoint b );
-double		operator*( const double a, const FixPoint b );
-double		operator*( const FixPoint a, const double b );
+double		operator*( const int a, const FixPoint &b );
+double		operator*( const FixPoint &a, const int b );
+double		operator*( const FixPoint &a, const FixPoint &b );
+double		operator*( const double a, const FixPoint &b );
+double		operator*( const FixPoint &a, const double b );
 
-double		operator/( const int a, const FixPoint b );
-double		operator/( const FixPoint a, const int b );
-double		operator/( const FixPoint a, const FixPoint b );
-double		operator/( const double a, const FixPoint b );
-double		operator/( const FixPoint a, const double b );
+double		operator/( const int a, const FixPoint &b );
+double		operator/( const FixPoint &a, const int b );
+double		operator/( const FixPoint &a, const FixPoint &b );
+double		operator/( const double a, const FixPoint &b );
+double		operator/( const FixPoint &a, const double b );
 
 std::ostream    &operator<<( std::ostream &out, const FixPoint &FP );
 

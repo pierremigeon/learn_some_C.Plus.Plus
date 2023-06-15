@@ -253,83 +253,83 @@ const	FixPoint	&FixPoint::max( const FixPoint &FP1, const FixPoint &FP2) {
 	return (( FP1 > FP2 ) ? FP1 : FP2 );
 }
 
-double		operator+( const int a, const FixPoint b ) { 
+double		operator+( const int a, const FixPoint &b ) { 
 	return ( a * 1.0f + b.toFloat() );
 }
 
-double		operator+( const FixPoint a, const int b ) { 
+double		operator+( const FixPoint &a, const int b ) { 
 	return ( a.toFloat() + b * 1.0f );
 }
 
-double		operator+( const FixPoint a, const FixPoint b ) { 
+double		operator+( const FixPoint &a, const FixPoint &b ) { 
 	return ( a.toFloat() + b.toFloat() );
 }
 
-double		operator+( const double a, const FixPoint b ) { 
+double		operator+( const double a, const FixPoint &b ) { 
 	return ( a + b.toFloat() );
 }
 
-double		operator+( const FixPoint a, const double b ) { 
+double		operator+( const FixPoint &a, const double b ) { 
 	return ( a.toFloat() + b );
 }
 
 
-double		operator-( const int a, const FixPoint b ) { 
+double		operator-( const int a, const FixPoint &b ) { 
 	return ( a * 1.0f - b.toFloat() );
 }
 
-double		operator-( const FixPoint a, const int b ) { 
+double		operator-( const FixPoint &a, const int b ) { 
 	return ( a.toFloat() - b * 1.0f );
 }
 
-double		operator-( const FixPoint a, const FixPoint b ) { 
+double		operator-( const FixPoint &a, const FixPoint &b ) { 
 	return ( a.toFloat() - b.toFloat() );
 }
 
-double		operator-( const double a, const FixPoint b ) { 
+double		operator-( const double a, const FixPoint &b ) { 
 	return ( a - b.toFloat() );
 }
 
-double		operator-( const FixPoint a, const double b ) { 
+double		operator-( const FixPoint &a, const double b ) { 
 	return ( a.toFloat() - b );
 }
 
-double		operator*( const int a, const FixPoint b ) { 
+double		operator*( const int a, const FixPoint &b ) { 
 	return ( a * 1.0f * b.toFloat() );
 }
 
-double		operator*( const FixPoint a, const int b ) { 
+double		operator*( const FixPoint &a, const int b ) { 
 	return ( a.toFloat() * b * 1.0f );
 }
 
-double		operator*( const FixPoint a, const FixPoint b ) { 
+double		operator*( const FixPoint &a, const FixPoint &b ) { 
 	return ( a.toFloat() * b.toFloat() );
 }
 
-double		operator*( const double a, const FixPoint b ) { 
+double		operator*( const double a, const FixPoint &b ) { 
 	return ( a * b.toFloat() );
 }
 
-double		operator*( const FixPoint a, const double b ) { 
+double		operator*( const FixPoint &a, const double b ) { 
 	return ( a.toFloat() * b );
 }
 
-double		operator/( const int a, const FixPoint b ) { 
+double		operator/( const int a, const FixPoint &b ) { 
 	return ( a * 1.0f / b.toFloat() );
 }
 
-double		operator/( const FixPoint a, const int b ) { 
+double		operator/( const FixPoint &a, const int b ) { 
 	return ( a.toFloat() / b * 1.0f );
 }
 
-double		operator/( const FixPoint a, const FixPoint b ) { 
+double		operator/( const FixPoint &a, const FixPoint &b ) { 
 	return ( a.toFloat() / b.toFloat() );
 }
 
-double		operator/( const double a, const FixPoint b ) { 
+double		operator/( const double a, const FixPoint &b ) { 
 	return ( a / b.toFloat() );
 }
 
-double		operator/( const FixPoint a, const double b ) { 
+double		operator/( const FixPoint &a, const double b ) { 
 	return ( a.toFloat() / b );
 }
