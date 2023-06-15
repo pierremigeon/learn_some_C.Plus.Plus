@@ -261,6 +261,50 @@ int	main( void ) {
 	if ( X.toFloat() == D.toFloat() )
 		 std::cout << "sixth correct" << std::endl;
 	
+	//FP to FP
+		std::cout << e + f << std::endl;
+	//FP to int
+		std::cout << e + x << std::endl;
+	//int to FP
+		std::cout << x + e << std::endl;
+	//FP to float
+		std::cout << f + z_0 << std::endl;
+	//float to FP
+		std::cout << z_0 + f << std::endl;
+	
+	//FP to FP
+		std::cout << e - f << std::endl;
+	//FP to int
+		std::cout << e - x << std::endl;
+	//int to FP
+		std::cout << x - e << std::endl;
+	//FP to float
+		std::cout << f - z_0 << std::endl;
+	//float to FP
+		std::cout << z_0 - f << std::endl;
+	
+	//FP to FP
+		std::cout << e * f << std::endl;
+	//FP to int
+		std::cout << e * x << std::endl;
+	//int to FP
+		std::cout << x * e << std::endl;
+	//FP to float
+		std::cout << f * z_0 << std::endl;
+	//float to FP
+		std::cout << z_0 * f << std::endl;
+	
+	//FP to FP
+		std::cout << e / f << std::endl;
+	//FP to int
+		std::cout << e / x << std::endl;
+	//int to FP
+		std::cout << x / e << std::endl;
+	//FP to float
+		std::cout << f / z_0 << std::endl;
+	//float to FP
+		std::cout << z_0 / f << std::endl;
+	
 
 	
 	return 0; 
