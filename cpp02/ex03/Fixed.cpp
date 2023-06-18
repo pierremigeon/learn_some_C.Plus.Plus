@@ -2,19 +2,16 @@
 
 //Default constructor
 FixPoint::FixPoint( void ) {
-	std::cout << "Default constructor called" << std::endl;
 	this->value = 0;
 }
 
 //constructor taking an int 
 FixPoint::FixPoint( const int i ) {
-	std::cout << "Int constructor called" << std::endl;
 	this->value = i << this->fraction;
 }
 
 //constructor taking a double
 FixPoint::FixPoint( const double f ) {
-	std::cout << "Float constructor called" << std::endl;
 	int 	value;
 	double 	temp;
 
@@ -26,7 +23,6 @@ FixPoint::FixPoint( const double f ) {
 
 //copy constructor
 FixPoint::FixPoint( const FixPoint &FP ) {
-	std::cout << "Copy constructor called" << std::endl;
 	operator=(FP);
 }
 
@@ -35,7 +31,6 @@ FixPoint::FixPoint( const FixPoint &FP ) {
 
 //operator assignment overload constructor
 void	FixPoint::operator=( const FixPoint &FP ) {
-	std::cout << "Copy assignment operator called" << std::endl;
 	this->value = FP.getRawBits();
 }
 
@@ -207,12 +202,10 @@ bool	operator>=( const double f, const FixPoint &FP ) {
 
 //Default destructor
 FixPoint::~FixPoint( void ) {
-	std::cout << "Destructor called" << std::endl;
 }
 
 //Retrieve FixPoint->value
 int	FixPoint::getRawBits( void ) const {
-	std::cout << "getRawBits member function called" << std::endl;
 	return this->value;
 }
 

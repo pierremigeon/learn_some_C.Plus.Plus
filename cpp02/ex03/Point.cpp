@@ -3,11 +3,13 @@
 int Point::id = 0;
 
 Point::Point( void ) : x(0), y(0) {
-	this->id++;
+	Point::id++;
+	this->my_id = Point::id - 1;
 }
 
 Point::Point( const FixPoint &_x, const FixPoint &_y ) : x(_x), y(_y) {
-	this->id++; 
+	Point::id++;
+	this->my_id = Point::id - 1;
 }
 
 Point::Point( Point &p ) {
@@ -15,12 +17,13 @@ Point::Point( Point &p ) {
 }
 
 Point	&Point::operator=( Point &p ) {
-	this->id++;
+	Point::id++;
+	this->my_id = Point::id - 1;
 	return p;
 }
 
 Point::~Point() {
-	std::cout << "End of the road for point: " << this->id << std::endl;
+	std::cout << "destructor for point " << this->my_id + 1 << "/" << this->id << std::endl;
 }
 
 FixPoint	Point::area(Point const &a, Point const &b, Point const &c) {

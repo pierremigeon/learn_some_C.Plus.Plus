@@ -9,7 +9,7 @@ class Point {
 	const FixPoint 		x;
 	const FixPoint 		y; 
 	static int		id;
-	//int			my_id;
+	int			my_id;
 
 	public:
 	Point( void );
