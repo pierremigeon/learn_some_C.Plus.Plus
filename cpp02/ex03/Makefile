@@ -1,5 +1,5 @@
 
-all: main.cpp Fixed.cpp Point.cpp 
+all: main.cpp Fixed.cpp Point.cpp bsp.cpp 
 	@clear
 	c++ -Wall -Wextra -Werror -std=c++98 $^ -o FixPoint_3
 

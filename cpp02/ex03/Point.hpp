@@ -16,6 +16,7 @@ class Point {
 	Point( const FixPoint &x, const FixPoint &y );
 	Point( Point &p );
 	Point	&operator=( Point &p );
+	static	int	area(Point a, Point b, Point c);
 	~Point();
 };
 
