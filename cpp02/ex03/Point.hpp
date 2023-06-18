@@ -9,14 +9,14 @@ class Point {
 	const FixPoint 		x;
 	const FixPoint 		y; 
 	static int		id;
-	//const int		my_id;
+	//int			my_id;
 
 	public:
 	Point( void );
 	Point( const FixPoint &x, const FixPoint &y );
 	Point( Point &p );
 	Point	&operator=( Point &p );
-	static	int	area(Point a, Point b, Point c);
+	static	FixPoint	area(const Point &a, const Point &b, const Point &c);
 	~Point();
 };
 

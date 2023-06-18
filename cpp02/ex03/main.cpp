@@ -1,5 +1,5 @@
 #include "Point.hpp"
-#include "bsp.cpp"
+#include "bsp.hpp"
 
 int	main() {
 	Point a(0, 10);

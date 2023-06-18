@@ -205,8 +205,6 @@ bool	operator>=( const double f, const FixPoint &FP ) {
 }
 
 
-
-
 //Default destructor
 FixPoint::~FixPoint( void ) {
 	std::cout << "Destructor called" << std::endl;
@@ -237,4 +235,123 @@ double	FixPoint::toFloat( void ) const {
 
 	out = 1.0f *  this->value / pow(2, this->fraction);
 	return( out );
+}
+
+FixPoint	&FixPoint::min( FixPoint &FP1, FixPoint &FP2) {
+	return (( FP1 < FP2 ) ? FP1 : FP2 );
+}
+
+const	FixPoint	&FixPoint::min( const FixPoint &FP1, const FixPoint &FP2) {
+	return (( FP1 < FP2 ) ? FP1 : FP2 );
+}
+
+FixPoint	&FixPoint::max( FixPoint &FP1, FixPoint &FP2) {
+	return (( FP1 > FP2 ) ? FP1 : FP2 );
+}
+
+const	FixPoint	&FixPoint::max( const FixPoint &FP1, const FixPoint &FP2) {
+	return (( FP1 > FP2 ) ? FP1 : FP2 );
+}
+
+double		operator+( const int a, const FixPoint &b ) { 
+	return ( a * 1.0f + b.toFloat() );
+}
+
+double		operator+( const FixPoint &a, const int b ) { 
+	return ( a.toFloat() + b * 1.0f );
+}
+
+double		operator+( const FixPoint &a, const FixPoint &b ) { 
+	return ( a.toFloat() + b.toFloat() );
+}
+
+double		operator+( const double a, const FixPoint &b ) { 
+	return ( a + b.toFloat() );
+}
+
+double		operator+( const FixPoint &a, const double b ) { 
+	return ( a.toFloat() + b );
+}
+
+
+double		operator-( const int a, const FixPoint &b ) { 
+	return ( a * 1.0f - b.toFloat() );
+}
+
+double		operator-( const FixPoint &a, const int b ) { 
+	return ( a.toFloat() - b * 1.0f );
+}
+
+double		operator-( const FixPoint &a, const FixPoint &b ) { 
+	return ( a.toFloat() - b.toFloat() );
+}
+
+double		operator-( const double a, const FixPoint &b ) { 
+	return ( a - b.toFloat() );
+}
+
+double		operator-( const FixPoint &a, const double b ) { 
+	return ( a.toFloat() - b );
+}
+
+double		operator*( const int a, const FixPoint &b ) { 
+	return ( a * 1.0f * b.toFloat() );
+}
+
+double		operator*( const FixPoint &a, const int b ) { 
+	return ( a.toFloat() * b * 1.0f );
+}
+
+double		operator*( const FixPoint &a, const FixPoint &b ) { 
+	return ( a.toFloat() * b.toFloat() );
+}
+
+double		operator*( const double a, const FixPoint &b ) { 
+	return ( a * b.toFloat() );
+}
+
+double		operator*( const FixPoint &a, const double b ) { 
+	return ( a.toFloat() * b );
+}
+
+double		operator/( const int a, const FixPoint &b ) { 
+	return ( a * 1.0f / b.toFloat() );
+}
+
+double		operator/( const FixPoint &a, const int b ) { 
+	return ( a.toFloat() / b * 1.0f );
+}
+
+double		operator/( const FixPoint &a, const FixPoint &b ) { 
+	return ( a.toFloat() / b.toFloat() );
+}
+
+double		operator/( const double a, const FixPoint &b ) { 
+	return ( a / b.toFloat() );
+}
+
+double		operator/( const FixPoint &a, const double b ) { 
+	return ( a.toFloat() / b );
+}
+
+FixPoint	&FixPoint::operator++() {
+	this->value++;
+	return *this;
+}
+
+FixPoint	FixPoint::operator++(int) {
+	FixPoint temp = *this;
+	this->value++;
+	return temp;
+}
+
+FixPoint	&FixPoint::operator--() {
+	this->value--;
+	return *this;
+}
+
+FixPoint	FixPoint::operator--(int) {
+	FixPoint temp = *this;
+	this->value--;
+	return temp;
 }
