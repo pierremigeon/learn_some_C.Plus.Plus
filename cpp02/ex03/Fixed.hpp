@@ -9,7 +9,7 @@ class FixPoint {
 	static const int	fraction = 8;
 
 	public:
-	FixPoint( void );	
+	FixPoint( void );
 	FixPoint( const int i );
 	FixPoint( const double f );
 	FixPoint( const FixPoint &FP );

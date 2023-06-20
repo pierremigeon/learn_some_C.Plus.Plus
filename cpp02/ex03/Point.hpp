@@ -14,10 +14,13 @@ class Point {
 	public:
 	Point( void );
 	Point( const FixPoint &x, const FixPoint &y );
-	Point( Point &p );
-	Point	&operator=( Point &p );
-	static	FixPoint	area(const Point &a, const Point &b, const Point &c);
+	Point( const Point &p );
 	~Point();
+
+	void			operator=( const Point &p );
+	static	FixPoint	area(const Point &a, const Point &b, const Point &c);
+	FixPoint	getX( void ) const;
+	FixPoint	getY( void ) const;
 };
 
 #endif

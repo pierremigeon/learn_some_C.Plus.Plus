@@ -26,7 +26,6 @@ FixPoint::FixPoint( const FixPoint &FP ) {
 	operator=(FP);
 }
 
-
 //OVERLOAD FUNCTIONS
 
 //operator assignment overload constructor
@@ -39,9 +38,6 @@ std::ostream 	&operator<<( std::ostream &out, const FixPoint &FP ) {
 	out << FP.toFloat();
 	return out;
 }
-
-
-
 
 //== OVERLOADS
 //== operator overload function: FP TO FP

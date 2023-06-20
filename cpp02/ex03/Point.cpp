@@ -12,14 +12,15 @@ Point::Point( const FixPoint &_x, const FixPoint &_y ) : x(_x), y(_y) {
 	this->my_id = Point::id - 1;
 }
 
-Point::Point( Point &p ) {
+Point::Point( const Point &p ) {
 	operator=(p);
 }
 
-Point	&Point::operator=( Point &p ) {
+void	Point::operator=( const Point &p ) {
 	Point::id++;
 	this->my_id = Point::id - 1;
-	return p;
+	this->x = p.getX();
+	this->y = p.getY();
 }
 
 Point::~Point() {
@@ -28,4 +29,12 @@ Point::~Point() {
 
 FixPoint	Point::area(Point const &a, Point const &b, Point const &c) {
 	return(abs(a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x*(a.y - b.y))/2);
+}
+
+FixPoint		Point::getX( void ) const {
+	return this->x;
+}
+
+FixPoint		Point::getY( void ) const {
+	return this->y;
 }
