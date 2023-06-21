@@ -1,4 +1,6 @@
 
+#ifndef NODE_H
+# define NODE_H
 
 class Node {
 	const	std::string	name;
@@ -12,3 +14,5 @@ class Node {
 
 
 };
+
+#endif

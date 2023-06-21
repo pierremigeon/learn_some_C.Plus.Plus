@@ -1,5 +1,7 @@
-#include <iostream>
-#include "Node.hpp"
+#ifndef CLAPTRAP_H
+# define CLAPTRAP_H
+# include <iostream>
+# include "Node.hpp"
 
 class ClapTrap {
 	std::string 	name;
@@ -21,3 +23,5 @@ class ClapTrap {
 	unsigned int	get_EP() const;
 	unsigned int	get_AD() const;
 };
+
+#endif
