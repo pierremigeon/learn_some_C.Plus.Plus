@@ -1,6 +1,5 @@
 #include "ClapTrap.hpp"
-
-//Node	&treeHead = NULL;
+#include "Node.hpp"
 
 ClapTrap::ClapTrap( const std::string _name ) : name(_name) {
 	this->hitPoints = 10;
@@ -24,15 +23,19 @@ ClapTrap::~ClapTrap() {
 }
 
 unsigned int	ClapTrap::get_HP() const {
-	return( this->hitPoints );
+	return ( this->hitPoints );
 }
 
 unsigned int	ClapTrap::get_EP() const {
-	return( this->energyPoints );
+	return ( this->energyPoints );
 }
 
 unsigned int	ClapTrap::get_AD() const {
-	return( this->attackDamage );
+	return ( this->attackDamage );
+}
+
+std::string	ClapTrap::get_name() const {
+	return ( this->name );
 }
 
 void ClapTrap::attack(const std::string& target) {

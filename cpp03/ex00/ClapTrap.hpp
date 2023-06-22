@@ -1,14 +1,14 @@
 #ifndef CLAPTRAP_H
 # define CLAPTRAP_H
 # include <iostream>
-# include "Node.hpp"
+
+class Node;
 
 class ClapTrap {
 	std::string 	name;
 	unsigned int	hitPoints;
 	unsigned int	energyPoints;
 	unsigned int	attackDamage;
-	static Node	&treeHead;
 
 	public:
 	ClapTrap( const std::string _name );
@@ -22,6 +22,7 @@ class ClapTrap {
 	unsigned int	get_HP() const;
 	unsigned int	get_EP() const;
 	unsigned int	get_AD() const;
+	std::string	get_name() const;
 };
 
 #endif

@@ -1,5 +1,5 @@
-
 #include "ClapTrap.hpp"
+#include "Node.hpp"
 
 int	main() {
 	ClapTrap A("Franklin");
@@ -7,6 +7,9 @@ int	main() {
 	ClapTrap C(A);
 	
 	std::cout << "Basic setup hey!?! ..." << std::endl;
+
+	Node::printNode();
+
 
 	return (0);
 }
