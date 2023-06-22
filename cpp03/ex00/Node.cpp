@@ -1,14 +1,18 @@
 #include "Node.hpp"
+#include "HeadPoint.hpp"
 
-const Node	*Node::head = Node::makeHead();
+const	HeadPoint Node::Head;
 
 Node	*Node::makeHead( void ) {
-	ClapTrap *head = new ClapTrap("Tree Head");
-	Node	*Head = new Node (*head);
-	return Head;
+	ClapTrap &CT = *(new ClapTrap("Tree Head"));
+	Node	*headNode = new Node (CT);
+	std::cout << "Made headnode" << std::endl;
+	return headNode;
 }
 
 void	Node::printNode( void ) {
+	Node *head = Head.getHead();
+	std::cout << "Entered PrintNOde" << std::endl;
 	std::cout << "Head is :" << head->member.get_name() << std::endl;
 	std::cout << "left is :" << head->left << std::endl;
 	std::cout << "right is :" << head->right << std::endl;
@@ -33,7 +37,9 @@ void	Node::operator=(const Node &n) {
 }
 */
  
-Node::~Node( void ) { ;}
+Node::~Node( void ) { 
+	delete &this->member;
+}
 
 //void	Node::placeInTree() {
 //
