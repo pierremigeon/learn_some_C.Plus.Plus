@@ -1,3 +1,3 @@
-I've decided to try learning a small amount of C++, just because I think it would be useful to have at least a small amount of knowledge of this subject and I also think that since I know how to program in C, I might as well take it a step in a more modern direction. You'll never know if you like something until you try, as they say.
+I've decided to try my hand at learning some C++, because I think it would be useful to have at least a smidgen (or more!) of knowledge on the subject. Since I program in C, I might as well explore its more current relative and gain a better understanding of modern programming paradigms. I'm following the 42 c++ piscine curriculum. Turns out that I enjoy the topic, and so this has been my primary project over the past few weeks.
 
 ![C-extra](https://m.media-amazon.com/images/I/913zy32yWFS.jpg) 
