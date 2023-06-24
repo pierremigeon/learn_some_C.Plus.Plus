@@ -5,11 +5,10 @@ int	main() {
 	ClapTrap A("Franklin");
 	ClapTrap B = A;
 	ClapTrap C(A);
-	
-	std::cout << "Basic setup hey!?! ..." << std::endl;
+	ClapTrap D("James Dean");
 
-	Node::printNode();
-
+	A.attack("James Dean");
+	A.attack("John Lennon");
 
 	return (0);
 }

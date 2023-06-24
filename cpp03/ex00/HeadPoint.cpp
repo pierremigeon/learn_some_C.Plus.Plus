@@ -1,15 +1,14 @@
 #include "HeadPoint.hpp"
 #include "Node.hpp"
 
-HeadPoint::HeadPoint() {
-	this->head = Node::makeHead();
+HeadPoint::HeadPoint() : head(Node::makeHead()) { 
+	Node::printNode();
 }
 
 HeadPoint::~HeadPoint() {
-	delete this->head;
+	delete &this->head;
 }
 
-Node	*HeadPoint::getHead() const {
+Node	&HeadPoint::getHead() const {
 	return this->head;
 }
-

@@ -5,6 +5,9 @@ ClapTrap::ClapTrap( const std::string _name ) : name(_name) {
 	this->hitPoints = 10;
 	this->energyPoints = 10;
 	this->attackDamage = 0;
+	//if ( (find_member(_name)).show_name == _name)	
+	if (_name != "Tree Head")
+		Node::addTreeMember(*this);
 }
 
 ClapTrap::ClapTrap( const ClapTrap &_ct ) {
@@ -38,9 +41,26 @@ std::string	ClapTrap::get_name() const {
 	return ( this->name );
 }
 
-void ClapTrap::attack(const std::string& target) {
+int		attackErrorMessage( const std::string name, const std::string target ) {
+	std::cout << "ClapTrap " << name << " cannot attack " << target <<\
+		 " because " << target << " does not exist!!!" << std::endl;
+	return (1);
+}
+
+void		attackSuccessMessage( const std::string name, const std::string target, const unsigned int damage ) {
+	std::cout << "ClapTrap " << name << " attacks " << target << ",causing "\
+		 << damage << " points of damage!" << std::endl;
+}
+
+void		ClapTrap::attack(const std::string& target) {
+	ClapTrap &head = Node::findTreeMember( target );
+	if ( head.get_name() == "Tree Head" )
+		if ( attackErrorMessage(this->name, target) )
+			return;
+	ClapTrap &victim = Node::findTreeMember(target);
+	victim.takeDamage(this->attackDamage);
 	this->energyPoints--;
-	std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
+	attackSuccessMessage(this->name, target, this->attackDamage);
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {

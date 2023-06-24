@@ -6,18 +6,24 @@
 class HeadPoint;
 
 class Node {
-	const	ClapTrap	&member;
+	ClapTrap	&member;
+
+	public:
 	Node			*left;
 	Node			*right;
 	static const HeadPoint	Head;
 
-	public:
-	Node(const ClapTrap &member);
-	Node(const Node &n);
-	void	operator=(const Node &n);
-	~Node( void );
-	static void	printNode( void );
-	static Node	*makeHead( void );
+				Node( ClapTrap &member );
+				Node( const Node &n );
+	void			operator=( const Node &n );
+				~Node( void );
+
+	static void		printNode( void );
+	static Node		&makeHead( void );
+	std::string		get_member_name() const;
+	ClapTrap		&get_member() const;
+	static ClapTrap		&findTreeMember( std::string name );
+	static void		addTreeMember( ClapTrap &new_member );
 };
 
 #endif

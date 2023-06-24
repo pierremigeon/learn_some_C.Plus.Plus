@@ -1,10 +1,10 @@
 class Node;
 
 class HeadPoint {
-	Node	*head;	
+	Node	&head;	
 
 	public:
 	HeadPoint(); 
 	~HeadPoint();
-	Node	*getHead() const;
+	Node	&getHead() const;
 };
