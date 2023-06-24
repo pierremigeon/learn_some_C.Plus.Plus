@@ -1,11 +1,30 @@
 #include "ClapTrap.hpp"
 #include "Node.hpp"
 
+std::string	number_name( std::string name ) {
+	int i;
+	for (i = 0; i < name.length(); i++)
+		if (isdigit(name[i]))
+			break;
+	int num = atoi(&(name.substr(i, name.length())));
+	return (name.substr(0, --i) + itoa(++num));
+}
+
+int		name_exists( std::string name ) {
+	ClapTrap check = Node::findTreeMember(name);
+	if ( name == "Tree Head" )
+		return (0);
+	if ( check.get_name() == name )
+		return (1);
+	return (0);
+}
+
 ClapTrap::ClapTrap( const std::string _name ) : name(_name) {
 	this->hitPoints = 10;
 	this->energyPoints = 10;
 	this->attackDamage = 0;
-	//if ( (find_member(_name)).show_name == _name)	
+	if ( name_exists( name ) )
+		this->name = number_name( name );
 	if (_name != "Tree Head")
 		Node::addTreeMember(*this);
 }

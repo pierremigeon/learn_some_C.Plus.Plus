@@ -1,6 +1,8 @@
 #ifndef CLAPTRAP_H
 # define CLAPTRAP_H
 # include <iostream>
+# include <stdlib.h>
+# include <string>
 
 class Node;
 
