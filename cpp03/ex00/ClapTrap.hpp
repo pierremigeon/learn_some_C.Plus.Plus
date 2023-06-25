@@ -3,6 +3,7 @@
 # include <iostream>
 # include <stdlib.h>
 # include <string>
+# include <stdlib.h>
 
 class Node;
 
@@ -25,6 +26,7 @@ class ClapTrap {
 	unsigned int	get_EP() const;
 	unsigned int	get_AD() const;
 	std::string	get_name() const;
+	std::string	number_name( std::string name );
+	int		name_exists( std::string name );
 };
-
 #endif

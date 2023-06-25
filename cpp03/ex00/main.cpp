@@ -3,12 +3,10 @@
 
 int	main() {
 	ClapTrap A("Franklin");
-	ClapTrap B = A;
-	ClapTrap C(A);
-	ClapTrap D("James Dean");
-
-	A.attack("James Dean");
-	A.attack("John Lennon");
+	ClapTrap B("Franklin0");
+	ClapTrap C("Franklin");
+	ClapTrap D("Franklin1");
+	
 
 	return (0);
 }

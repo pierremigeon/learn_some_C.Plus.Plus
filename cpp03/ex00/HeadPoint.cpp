@@ -9,6 +9,6 @@ HeadPoint::~HeadPoint() {
 	delete &this->head;
 }
 
-Node	&HeadPoint::getHead() const {
+Node		&HeadPoint::getHead() const {
 	return this->head;
 }

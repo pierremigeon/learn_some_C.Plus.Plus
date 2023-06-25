@@ -1,20 +1,34 @@
 #include "ClapTrap.hpp"
 #include "Node.hpp"
 
-std::string	number_name( std::string name ) {
-	int i;
-	for (i = 0; i < name.length(); i++)
-		if (isdigit(name[i]))
-			break;
-	int num = atoi(&(name.substr(i, name.length())));
-	return (name.substr(0, --i) + itoa(++num));
+int	checkName( std::string name ) {
+	ClapTrap &check = Node::findTreeMember(name);
+
+	if ( check.get_name() != "Tree Head" )
+		return (1);
+	return (0);
 }
 
-int		name_exists( std::string name ) {
-	ClapTrap check = Node::findTreeMember(name);
-	if ( name == "Tree Head" )
-		return (0);
-	if ( check.get_name() == name )
+std::string	ClapTrap::number_name( std::string name ) {
+	unsigned long	i;
+	std::string	substring;
+	int		num;
+
+	for (i = name.length() - 1; i >= 0; i--)
+		if (!isdigit(name[i]))
+			break;
+	if ( ++i == name.length() && checkName(name + "1") == 0)
+		return ( name + "1" );
+	substring = name.substr(i, name.length());
+	num = atoi(substring.c_str());
+	while ( checkName( name.substr( 0, i ) + std::to_string(num) ) )
+		++num;
+	return (name.substr(0, i) + std::to_string(num));
+}
+
+int		ClapTrap::name_exists( std::string name ) {
+	ClapTrap &check = Node::findTreeMember(name);
+	if ( check.get_name() != "Tree Head" )
 		return (1);
 	return (0);
 }
@@ -23,10 +37,11 @@ ClapTrap::ClapTrap( const std::string _name ) : name(_name) {
 	this->hitPoints = 10;
 	this->energyPoints = 10;
 	this->attackDamage = 0;
-	if ( name_exists( name ) )
-		this->name = number_name( name );
-	if (_name != "Tree Head")
-		Node::addTreeMember(*this);
+	if ( _name == "Tree Head" )
+		return ;
+	if ( name_exists( _name ) )
+		this->name = number_name( _name );
+	Node::addTreeMember(*this);
 }
 
 ClapTrap::ClapTrap( const ClapTrap &_ct ) {
@@ -34,6 +49,9 @@ ClapTrap::ClapTrap( const ClapTrap &_ct ) {
 }
 
 void	ClapTrap::operator=( const ClapTrap &_ct ) {
+	//if ( name_exists( _ct.name ) )
+	//	this->name = number_name( _ct.name );
+	//Node::addTreeMember(*this);
 	this->name = _ct.name;
 	this->hitPoints = _ct.get_HP();
 	this->energyPoints = _ct.get_EP();
@@ -41,7 +59,7 @@ void	ClapTrap::operator=( const ClapTrap &_ct ) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << this->name << " has been retired... desctructor called." << std::endl;
+	std::cout << this->name << " has been retired... destructor called." << std::endl;
 }
 
 unsigned int	ClapTrap::get_HP() const {
