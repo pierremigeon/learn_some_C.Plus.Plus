@@ -49,13 +49,13 @@ ClapTrap::ClapTrap( const ClapTrap &_ct ) {
 }
 
 void	ClapTrap::operator=( const ClapTrap &_ct ) {
-	//if ( name_exists( _ct.name ) )
-	//	this->name = number_name( _ct.name );
-	//Node::addTreeMember(*this);
 	this->name = _ct.name;
 	this->hitPoints = _ct.get_HP();
 	this->energyPoints = _ct.get_EP();
 	this->attackDamage = _ct.get_AD();
+	if ( name_exists( _ct.name ) )
+		this->name = number_name( _ct.name );
+	Node::addTreeMember(*this);
 }
 
 ClapTrap::~ClapTrap() {

@@ -2,11 +2,13 @@
 #include "Node.hpp"
 
 int	main() {
-	ClapTrap A("Franklin");
-	ClapTrap B("Franklin0");
-	ClapTrap C("Franklin");
-	ClapTrap D("Franklin1");
-	
+	ClapTrap A("Franklin_turtle");
+	ClapTrap B("Franklin_turtle0");
+	ClapTrap C("Franklin_turtle");
+	ClapTrap D("Franklin_turtle1");
+
+	ClapTrap E(A);
+	ClapTrap F = A;
 
 	return (0);
 }
