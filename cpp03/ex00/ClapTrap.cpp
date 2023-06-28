@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 #include "Node.hpp"
 
-int	checkName( std::string name ) {
+int	ClapTrap::nameExists( std::string name ) {
 	ClapTrap &check = Node::findTreeMember(name);
 
 	if ( check.get_name() != "Tree Head" )
@@ -17,20 +17,11 @@ std::string	ClapTrap::number_name( std::string name ) {
 	for (i = name.length() - 1; i >= 0; i--)
 		if (!isdigit(name[i]))
 			break;
-	if ( ++i == name.length() && checkName(name + "1") == 0)
-		return ( name + "1" );
-	substring = name.substr(i, name.length());
+	substring = name.substr(++i, name.length());
 	num = atoi(substring.c_str());
-	while ( checkName( name.substr( 0, i ) + std::to_string(num) ) )
+	while ( nameExists( name.substr( 0, i ) + std::to_string( num ) ) )
 		++num;
 	return (name.substr(0, i) + std::to_string(num));
-}
-
-int		ClapTrap::name_exists( std::string name ) {
-	ClapTrap &check = Node::findTreeMember(name);
-	if ( check.get_name() != "Tree Head" )
-		return (1);
-	return (0);
 }
 
 ClapTrap::ClapTrap( const std::string _name ) : name(_name) {
@@ -39,7 +30,7 @@ ClapTrap::ClapTrap( const std::string _name ) : name(_name) {
 	this->attackDamage = 0;
 	if ( _name == "Tree Head" )
 		return ;
-	if ( name_exists( _name ) )
+	if ( nameExists( _name ) )
 		this->name = number_name( _name );
 	Node::addTreeMember(*this);
 }
@@ -53,7 +44,7 @@ void	ClapTrap::operator=( const ClapTrap &_ct ) {
 	this->hitPoints = _ct.get_HP();
 	this->energyPoints = _ct.get_EP();
 	this->attackDamage = _ct.get_AD();
-	if ( name_exists( _ct.name ) )
+	if ( nameExists( _ct.name ) )
 		this->name = number_name( _ct.name );
 	Node::addTreeMember(*this);
 }

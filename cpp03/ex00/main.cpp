@@ -10,5 +10,8 @@ int	main() {
 	ClapTrap E(A);
 	ClapTrap F = A;
 
+	F.attack("Franklin_turtle2");
+
+
 	return (0);
 }

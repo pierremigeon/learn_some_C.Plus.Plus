@@ -27,6 +27,6 @@ class ClapTrap {
 	unsigned int	get_AD() const;
 	std::string	get_name() const;
 	std::string	number_name( std::string name );
-	int		name_exists( std::string name );
+	int		nameExists( std::string name );
 };
 #endif
