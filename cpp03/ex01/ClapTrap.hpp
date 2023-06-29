@@ -8,6 +8,7 @@
 class Node;
 
 class ClapTrap {
+	private:
 	std::string 	name;
 	unsigned int	hitPoints;
 	unsigned int	energyPoints;
@@ -16,6 +17,7 @@ class ClapTrap {
 	public:
 	ClapTrap( const std::string _name );
 	ClapTrap( const ClapTrap &_ct );
+	ClapTrap( const std::string _name, unsigned int hp, unsigned int ep, unsigned int ad );
 	void	operator=( const ClapTrap &_ct );
 	~ClapTrap( void );
 
@@ -27,6 +29,8 @@ class ClapTrap {
 	unsigned int	get_AD() const;
 	std::string	get_name() const;
 	std::string	number_name( std::string name );
-	int		name_exists( std::string name );
+	int		nameExists( std::string name );
+	int		clapTrapDeadMessage();
 };
+
 #endif

@@ -3,6 +3,7 @@ PROG_NAME=CLAPTRAP
 
 all: main.cpp ClapTrap.cpp Node.cpp HeadPoint.cpp ScavTrap.cpp
 	@clear
+	@clear
 	c++ -Wall -Wextra -Werror -std=c++98 $^ -o $(PROG_NAME)
 
 run: $(PROG_NAME)
