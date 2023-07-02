@@ -47,15 +47,15 @@ Node::Node( ClapTrap &_member ) : member( _member ) {
 	this->right = NULL;
 }
 
-//Node::Node(const Node &n) {
-//	operator=(n);
-//}
+Node::Node(const Node &n) : member(n.get_member()){
+	operator=(n);
+}
 
-//void	Node::operator=(const Node &n) {
-//	this->member = n.get_member();
-//	this->left = n.left;
-//	this->right = n.right;
-//}
+void	Node::operator=(const Node &n) {
+	this->member = n.get_member();
+	this->left = n.left;
+	this->right = n.right;
+}
  
 Node::~Node( void ) { 
 	delete &this->member;
