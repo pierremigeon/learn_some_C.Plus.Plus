@@ -15,6 +15,7 @@ class ClapTrap {
 	unsigned int	attackDamage;
 
 	public:
+	ClapTrap( void );
 	ClapTrap( const std::string _name );
 	ClapTrap( const ClapTrap &_ct );
 	ClapTrap( const std::string _name, unsigned int hp, unsigned int ep, unsigned int ad );

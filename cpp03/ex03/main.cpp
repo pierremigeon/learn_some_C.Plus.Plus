@@ -2,8 +2,15 @@
 #include "Node.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main() {
+
+	DiamondTrap *P = new DiamondTrap("Pierre");
+	P->whoAmI();
+	delete P;
+
+/*
 	ScavTrap A("Johnny Bravo");
 	ClapTrap B("Peat Moss");
 	ClapTrap C("Clara Thompson");
@@ -18,6 +25,7 @@ int	main() {
 	B.attack("Clara Thompson");
 
 	D.highFivesGuys();
+*/
 
 	return (0);
 }

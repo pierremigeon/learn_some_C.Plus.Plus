@@ -24,6 +24,20 @@ std::string	ClapTrap::number_name( std::string name ) {
 	return (name.substr(0, i) + std::to_string(num));
 }
 
+ClapTrap::ClapTrap( void ) : name("") {
+	std::string _name = "";
+	std::cout << "ClapTrap initialized" << std::endl;
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
+	if ( _name == "Tree Head" )
+		return ;
+	if ( nameExists( _name ) )
+		this->name = number_name( _name );
+	Node::addTreeMember(*this);
+	std::cout << "Claptrap " << _name << " has been initialized" << std::endl;
+}
+
 ClapTrap::ClapTrap( const std::string _name ) : name(_name) {
 	std::cout << "ClapTrap initialized" << std::endl;
 	this->hitPoints = 10;

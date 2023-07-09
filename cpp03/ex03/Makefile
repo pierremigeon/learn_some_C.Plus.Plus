@@ -1,7 +1,7 @@
 
-PROG_NAME=FRAGTRAP
+PROG_NAME=DIAMONDTRAP
 
-all: main.cpp ClapTrap.cpp Node.cpp HeadPoint.cpp ScavTrap.cpp FragTrap.cpp
+all: main.cpp ClapTrap.cpp Node.cpp HeadPoint.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 	@clear
 	@clear
 	c++ -Wall -Wextra -Werror -std=c++98 $^ -o $(PROG_NAME)
@@ -10,7 +10,7 @@ run: $(PROG_NAME)
 	./$(PROG_NAME)
 
 edit: 
-	vi FragTrap.cpp
+	vi DiamondTrap.cpp
 
 see: 
 	less ./Makefile
