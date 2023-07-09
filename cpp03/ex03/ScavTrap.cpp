@@ -12,6 +12,11 @@ ScavTrap::~ScavTrap() {
 	std::cout << "ScavTrap " << this->get_name() << " has been retired... destructor called." << std::endl;
 }
 
+void		ScavTrap::attack(const std::string& target) {
+	std::cout << "ScavTrap " << this->get_name() << " attack called" << std::endl;
+	this->ClapTrap::attack(target);
+}
+
 void	ScavTrap::guardGate() {
 	std::cout << "ScavTrap " << this->get_name() << " is now in gatekeeper mode" << std::endl;
 }

@@ -8,7 +8,13 @@ int	main() {
 
 	DiamondTrap *P = new DiamondTrap("Pierre");
 	P->whoAmI();
+
+	ScavTrap A("Johnny Bravo");
+	A.attack("Pierre");
+	A.attack("Pierre_clap_name");
+	P->attack("Johnny Bravo");
 	delete P;
+	A.attack("Pierre_clap_name");
 
 /*
 	ScavTrap A("Johnny Bravo");

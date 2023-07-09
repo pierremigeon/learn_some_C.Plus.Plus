@@ -4,6 +4,7 @@
 # include <stdlib.h>
 
 class ScavTrap: public virtual ClapTrap {
+
 	public:
 	ScavTrap( void );
 	ScavTrap( const std::string _name );
@@ -11,7 +12,8 @@ class ScavTrap: public virtual ClapTrap {
 	void    operator=( const ScavTrap &_ct );
 	~ScavTrap( void );
 
-	void guardGate();
+	void 	guardGate();
+	void	attack(const std::string& target);
 };
 
 #endif
