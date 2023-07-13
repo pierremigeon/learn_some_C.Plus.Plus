@@ -21,3 +21,11 @@ Brain::~Brain( void ) {
 void	Brain::newThought( std::string thought ) {
 	this->ideas[0] = thought;
 }
+
+std::string     Brain::giveThought( int x ) const {
+	return this->ideas[x];
+}
+
+const Brain	*Brain::giveAddress( void ) const {
+	return this;
+}

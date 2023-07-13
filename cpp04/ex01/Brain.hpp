@@ -13,6 +13,9 @@ class Brain {
 	Brain( const Brain &_animal );
 	void	operator=( const Brain &_animal );
 	~Brain( void );
+	void	newThought( std::string thought );
+	std::string	giveThought( int x ) const;
+	const Brain	*giveAddress( void ) const;
 };
 
 #endif

@@ -10,6 +10,7 @@ class Animal {
 	Brain *brain;
 
 	public:
+	static int total;
 	Animal( void );
 	Animal( const std::string _type, const std::string _noise );
 	Animal( const Animal &_animal );
@@ -18,7 +19,9 @@ class Animal {
 
 	const	std::string	&getType() const;
 	void			makeSound() const;
-	void			newThought( std::string thought );
+	void			think( std::string thought );
+	void			giveThought( int x );
+	const Brain     	*getAddress( void ) const ;
 };
 
 #endif
