@@ -25,6 +25,7 @@ void			Animal::operator=( const Animal &_animal ) {
 	std::cout << "Animal assignment operator overload called" << std::endl;
 	this->brain = new Brain(*_animal.brain);
 	this->type = _animal.type;
+	this->noise = _animal.noise;
 	this->total += 1;
 	std::cout << this->total << std::endl;
 }

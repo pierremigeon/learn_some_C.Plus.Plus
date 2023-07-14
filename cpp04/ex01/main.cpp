@@ -62,6 +62,8 @@ int	main( int argc, char **argv ) {
 		if ( check_any_equal(*array[i], *array[i + 1], *array[i + 2]) )
 			std::cout << "Deep copy failure!" << std::endl;
 	for ( int i = 0; i < 4; i++ )
+		array[i]->makeSound();
+	for ( int i = 0; i < 4; i++ )
 		delete array[i];
 
 
